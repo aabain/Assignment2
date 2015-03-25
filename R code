@@ -1,0 +1,674 @@
+> plot (X.IDENT~NAS)
+> lm(X.IDENT~NAS)
+
+Call:
+lm(formula = X.IDENT ~ NAS)
+
+Coefficients:
+(Intercept)          NAS  
+   -26.3678       0.1166  
+
+> abline(lm(X.IDENT~NAS),col=c('red'))
+> summary(lm(X.IDENT~NAS))
+
+Call:
+lm(formula = X.IDENT ~ NAS)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-7.7801 -1.5998 -0.1406  1.3767 19.9233 
+
+Coefficients:
+              Estimate Std. Error t value
+(Intercept) -2.637e+01  1.204e-01  -219.0
+NAS          1.166e-01  2.604e-04   447.8
+            Pr(>|t|)    
+(Intercept)   <2e-16 ***
+NAS           <2e-16 ***
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2.454 on 12718 degrees of freedom
+Multiple R-squared:  0.9404,	Adjusted R-squared:  0.9404 
+F-statistic: 2.005e+05 on 1 and 12718 DF,  p-value: < 2.2e-16
+
+
+
+
+> plot(X.IDENT~SCORE)
+> lm(X.IDENT~SCORE)
+
+Call:
+lm(formula = X.IDENT ~ SCORE)
+
+Coefficients:
+(Intercept)        SCORE  
+    18.7098       0.8023  
+
+> abline(lm(X.IDENT~SCORE),col=c('red'))
+> summary(lm(X.IDENT~SCORE))
+
+Call:
+lm(formula = X.IDENT ~ SCORE)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-12.793  -2.266  -0.218   1.909  38.489 
+
+Coefficients:
+             Estimate Std. Error t value
+(Intercept) 18.709766   0.041189   454.2
+SCORE        0.802288   0.002682   299.1
+            Pr(>|t|)    
+(Intercept)   <2e-16 ***
+SCORE         <2e-16 ***
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 3.545 on 12718 degrees of freedom
+Multiple R-squared:  0.8755,	Adjusted R-squared:  0.8755 
+F-statistic: 8.948e+04 on 1 and 12718 DF,  p-value: < 2.2e-16
+
+
+
+
+> plot(NAS~SCORE)
+> lm(NAS~SCORE)
+
+Call:
+lm(formula = NAS ~ SCORE)
+
+Coefficients:
+(Intercept)        SCORE  
+    385.385        7.005  
+
+> abline(lm(NAS~SCORE),col=c('red'))
+> summary(lm(NAS~SCORE))
+
+Call:
+lm(formula = NAS ~ SCORE)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-109.554   -9.184   -0.904    8.273  196.005 
+
+Coefficients:
+             Estimate Std. Error t value
+(Intercept) 385.38461    0.18178  2120.0
+SCORE         7.00502    0.01184   591.8
+            Pr(>|t|)    
+(Intercept)   <2e-16 ***
+SCORE         <2e-16 ***
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 15.65 on 12718 degrees of freedom
+Multiple R-squared:  0.965,	Adjusted R-squared:  0.965 
+F-statistic: 3.502e+05 on 1 and 12718 DF,  p-value: < 2.2e-16?
+
+
+
+
+
+-----------------------------------------------------------------------------
+
+Have to find some non-linear model that would explain the data, as the linear model does not fit the data. 
+
+-----------------------------------------------------------------------------
+
+> plot(SCORE~ILEN)
+> summary(SCORE~ILEN)
+ Length   Class    Mode 
+      3 formula    call 
+> lm(SCORE~ILEN)
+
+Call:
+lm(formula = SCORE ~ ILEN)
+
+Coefficients:
+(Intercept)         ILEN  
+   -4.89435      0.06459  
+
+> abline(lm(SCORE~ILEN),col=c('red'))
+> summary(lm(SCORE~ILEN))
+
+Call:
+lm(formula = SCORE ~ ILEN)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-16.847  -8.890  -5.094   8.576  72.958 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -4.894350   0.842369   -5.81 6.39e-09 ***
+ILEN         0.064595   0.003645   17.72  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 11.58 on 12718 degrees of freedom
+Multiple R-squared:  0.0241,	Adjusted R-squared:  0.02403 
+F-statistic: 314.1 on 1 and 12718 DF,  p-value: < 2.2e-16
+
+
+
+
+> plot(MATCH~ILEN)
+> lm(MATCH~ILEN)
+
+Call:
+lm(formula = MATCH ~ ILEN)
+
+Coefficients:
+(Intercept)         ILEN  
+    283.317        2.814  
+
+> abline(lm(MATCH~ILEN),col=c('red'))
+> summary(lm(MATCH~ILEN))
+
+Call:
+lm(formula = MATCH ~ ILEN)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-585.71 -170.35  -66.07  195.23 1512.50 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 283.31667   17.64512   16.06   <2e-16 ***
+ILEN          2.81441    0.07634   36.87   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 242.5 on 12718 degrees of freedom
+Multiple R-squared:  0.09654,	Adjusted R-squared:  0.09647 
+F-statistic:  1359 on 1 and 12718 DF,  p-value: < 2.2e-16
+
+
+
+
+
+
+
+> plot(X.IDENT~ILEN)
+> lm(X.IDENT~ILEN)
+
+Call:
+lm(formula = X.IDENT ~ ILEN)
+
+Coefficients:
+(Intercept)         ILEN  
+   16.42036      0.04469  
+
+> abline(lm(X.IDENT~ILEN),col=c('red'))
+> summary(lm(X.IDENT~ILEN))
+
+Call:
+lm(formula = X.IDENT ~ ILEN)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-18.325  -7.235  -2.414   6.150  76.206 
+
+Coefficients:
+             Estimate Std. Error t value
+(Intercept) 16.420362   0.725364   22.64
+ILEN         0.044687   0.003138   14.24
+            Pr(>|t|)    
+(Intercept)   <2e-16 ***
+ILEN          <2e-16 ***
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 9.97 on 12718 degrees of freedom
+Multiple R-squared:  0.01569,	Adjusted R-squared:  0.01561 
+F-statistic: 202.7 on 1 and 12718 DF,  p-value: < 2.2e-16
+
+
+
+
+
+> plot(MATCH~JLEN)
+> lm(MATCH~JLEN)
+
+Call:
+lm(formula = MATCH ~ JLEN)
+
+Coefficients:
+(Intercept)         JLEN  
+    220.722        3.197  
+
+> abline(lm(MATCH~JLEN),col=c('red'))
+> summary(lm(MATCH~JLEN))
+
+Call:
+lm(formula = MATCH ~ JLEN)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-640.9 -131.3  -81.1  173.0 1465.8 
+
+Coefficients:
+             Estimate Std. Error t value
+(Intercept) 220.72211   11.69684   18.87
+JLEN          3.19664    0.05203   61.44
+            Pr(>|t|)    
+(Intercept)   <2e-16 ***
+JLEN          <2e-16 ***
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 224.1 on 12718 degrees of freedom
+Multiple R-squared:  0.2289,	Adjusted R-squared:  0.2288 
+F-statistic:  3775 on 1 and 12718 DF,  p-value: < 2.2e-16
+
+
+
+
+
+
+
+> plot(X.IDENT~JLEN)
+> lm(X.IDENT~JLEN)
+
+Call:
+lm(formula = X.IDENT ~ JLEN)
+
+Coefficients:
+(Intercept)         JLEN  
+   17.54735      0.04118  
+
+> abline(lm(X.IDENT~JLEN)col=c('red'))
+Error: unexpected symbol in "abline(lm(X.IDENT~JLEN)col"
+> abline(lm(X.IDENT~JLEN),col=c('red'))
+> summary(lm(X.IDENT~JLEN))
+
+Call:
+lm(formula = X.IDENT ~ JLEN)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-19.065  -7.147  -1.887   5.953  75.452 
+
+Coefficients:
+             Estimate Std. Error t value
+(Intercept) 17.547347   0.518138   33.87
+JLEN         0.041183   0.002305   17.87
+            Pr(>|t|)    
+(Intercept)   <2e-16 ***
+JLEN          <2e-16 ***
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 9.925 on 12718 degrees of freedom
+Multiple R-squared:  0.02449,	Adjusted R-squared:  0.02442 
+F-statistic: 319.3 on 1 and 12718 DF,  p-value: < 2.2e-16
+
+
+
+
+
+
+> plot(SCORE~JLEN)
+> lm(SCORE~JLEN)
+
+Call:
+lm(formula = SCORE ~ JLEN)
+
+Coefficients:
+(Intercept)         JLEN  
+   -6.18794      0.07272  
+
+> abline(lm(SCORE~JLEN),col=c('red'))
+> summary(lm(SCORE~JLEN))
+
+Call:
+lm(formula = SCORE ~ JLEN)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-18.244  -7.780  -4.231   8.124  72.277 
+
+Coefficients:
+             Estimate Std. Error t value
+(Intercept) -6.187937   0.594420  -10.41
+JLEN         0.072722   0.002644   27.50
+            Pr(>|t|)    
+(Intercept)   <2e-16 ***
+JLEN          <2e-16 ***
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 11.39 on 12718 degrees of freedom
+Multiple R-squared:  0.05615,	Adjusted R-squared:  0.05607 
+F-statistic: 756.5 on 1 and 12718 DF,  p-value: < 2.2e-16
+
+
+
+-----------------------------------------------------------------------
+
+Normal for own data
+
+> plot(X.IDENT~NAS)
+> lm(X.IDENT~NAS)
+
+Call:
+lm(formula = X.IDENT ~ NAS)
+
+Coefficients:
+(Intercept)          NAS  
+    11.8884       0.1763  
+
+> abline(lm(X.IDENT~NAS),col=c('red'))
+> summary(lm(X.IDENT~NAS))
+
+Call:
+lm(formula = X.IDENT ~ NAS)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-17.1002  -1.9532   0.0744   1.8780  14.3002 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 11.888353   0.131570   90.36   <2e-16 ***
+NAS          0.176266   0.000448  393.46   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 3.775 on 3568 degrees of freedom
+Multiple R-squared:  0.9775,	Adjusted R-squared:  0.9775 
+F-statistic: 1.548e+05 on 1 and 3568 DF,  p-value: < 2.2e-16
+
+
+
+
+
+> plot(X.IDENT~SCORE)
+> lm(X.IDENT~SCORE)
+
+Call:
+lm(formula = X.IDENT ~ SCORE)
+
+Coefficients:
+(Intercept)        SCORE  
+     33.052        1.046  
+
+> abline(lm(X.IDENT~SCORE),col=c('red'))
+> summary(lm(X.IDENT~SCORE))
+
+Call:
+lm(formula = X.IDENT ~ SCORE)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-33.536  -6.393  -2.738   3.185  65.766 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 33.052069   0.285051   116.0   <2e-16 ***
+SCORE        1.045592   0.009041   115.7   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 11.54 on 3568 degrees of freedom
+Multiple R-squared:  0.7894,	Adjusted R-squared:  0.7894 
+F-statistic: 1.338e+04 on 1 and 3568 DF,  p-value: < 2.2e-16
+
+
+
+
+
+> plot(NAS~SCORE)
+> lm(NAS~SCORE)
+
+Call:
+lm(formula = NAS ~ SCORE)
+
+Coefficients:
+(Intercept)        SCORE  
+    122.170        5.841  
+
+> abline(lm(NAS~SCORE),col=c('re'))
+Error in int_abline(a = a, b = b, h = h, v = v, untf = untf, ...) : 
+  invalid color name 're'
+> abline(lm(NAS~SCORE),col=c('red'))
+> summary(lm(NAS~SCORE))
+
+Call:
+lm(formula = NAS ~ SCORE)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-169.57  -34.91  -21.78   18.75  456.94 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 122.17020    1.62265   75.29   <2e-16 ***
+SCORE         5.84118    0.05146  113.50   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 65.69 on 3568 degrees of freedom
+Multiple R-squared:  0.7831,	Adjusted R-squared:  0.783 
+F-statistic: 1.288e+04 on 1 and 3568 DF,  p-value: < 2.2e-16
+
+--------------------------------------------------------------------------------------
+
+
+ILEN
+
+> plot(MATCH~ILEN)
+> lm(MATCH~ILEN)
+
+Call:
+lm(formula = MATCH ~ ILEN)
+
+Coefficients:
+(Intercept)         ILEN  
+     72.646        1.621  
+
+> abline(lm(MATCH~ILEN),col=c('red'))
+> summary(lm(MATCH~ILEN))
+
+Call:
+lm(formula = MATCH ~ ILEN)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-349.2 -196.5 -122.2  175.4  556.8 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 72.64647   16.13455   4.503 6.93e-06 ***
+ILEN         1.62139    0.09394  17.260  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 243.9 on 3568 degrees of freedom
+Multiple R-squared:  0.07706,	Adjusted R-squared:  0.0768 
+F-statistic: 297.9 on 1 and 3568 DF,  p-value: < 2.2e-16
+
+
+
+> plot(X.IDENT~ILEN)
+> lm(X.IDENT~ILEN)
+
+Call:
+lm(formula = X.IDENT ~ ILEN)
+
+Coefficients:
+(Intercept)         ILEN  
+  58.478209    -0.007104  
+
+> abline(lm(X.IDENT~ILEN),col=c('red'))
+> summary(lm(X.IDENT~ILEN))
+
+Call:
+lm(formula = X.IDENT ~ ILEN)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-45.58 -21.18 -16.24  27.11  43.05 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 58.478209   1.663625  35.151   <2e-16 ***
+ILEN        -0.007104   0.009686  -0.733    0.463    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 25.15 on 3568 degrees of freedom
+Multiple R-squared:  0.0001507,	Adjusted R-squared:  -0.0001295 
+F-statistic: 0.5379 on 1 and 3568 DF,  p-value: 0.4634
+
+
+
+
+
+> plot(SCORE~ILEN)
+> lm(SCORE~ILEN)
+
+Call:
+lm(formula = SCORE ~ ILEN)
+
+Coefficients:
+(Intercept)         ILEN  
+     6.7709       0.0988  
+
+> abline(lm(SCORE~ILEN),col=c('red'))
+> summary(lm(SCORE~ILEN))
+
+Call:
+lm(formula = SCORE ~ ILEN)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-27.17 -17.54 -11.25  16.91  55.57 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 6.770915   1.384941   4.889 1.06e-06 ***
+ILEN        0.098802   0.008063  12.253  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 20.93 on 3568 degrees of freedom
+Multiple R-squared:  0.04038,	Adjusted R-squared:  0.04011 
+F-statistic: 150.1 on 1 and 3568 DF,  p-value: < 2.2e-16
+
+
+-------------------------------------------------------------------------------
+
+JLEN
+
+
+> plot(MATCH~JLEN)
+> lm(MATCH~JLEN)
+
+Call:
+lm(formula = MATCH ~ JLEN)
+
+Coefficients:
+(Intercept)         JLEN  
+     40.772        1.875  
+
+> abline(lm(MATCH~JLEN),col=c('red'))
+> summary(lm(MATCH~JLEN))
+
+Call:
+lm(formula = MATCH ~ JLEN)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-371.9 -192.1 -106.1  203.8  534.1 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 40.77157   15.15488    2.69  0.00717 ** 
+JLEN         1.87486    0.09093   20.62  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 240 on 3568 degrees of freedom
+Multiple R-squared:  0.1065,	Adjusted R-squared:  0.1062 
+F-statistic: 425.1 on 1 and 3568 DF,  p-value: < 2.2e-16
+
+
+
+
+
+> plot(X.IDENT~JLEN)
+> lm(X.IDENT~JLEN)
+
+Call:
+lm(formula = X.IDENT ~ JLEN)
+
+Coefficients:
+(Intercept)         JLEN  
+   53.31789      0.02477  
+
+> abline(lm(X.IDENT~JLEN),col=c('red'))
+> summary(lm(X.IDENT~JLEN))
+
+Call:
+lm(formula = X.IDENT ~ JLEN)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-42.71 -21.47 -15.66  27.29  45.89 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 53.317887   1.586730  33.602  < 2e-16 ***
+JLEN         0.024766   0.009521   2.601  0.00933 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 25.13 on 3568 degrees of freedom
+Multiple R-squared:  0.001893,	Adjusted R-squared:  0.001613 
+F-statistic: 6.767 on 1 and 3568 DF,  p-value: 0.009327
+
+
+
+
+
+
+> plot(SCORE~JLEN)
+> lm(SCORE~JLEN)
+
+Call:
+lm(formula = SCORE ~ JLEN)
+
+Coefficients:
+(Intercept)         JLEN  
+      3.588        0.122  
+
+> abline(lm(SCORE~JLEN))
+> abline(lm(SCORE~JLEN),col=c('red'))
+> summary(lm(SCORE~JLEN))
+
+Call:
+lm(formula = SCORE ~ JLEN)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-28.90 -17.39 -10.13  17.45  54.74 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 3.587733   1.305998   2.747  0.00604 ** 
+JLEN        0.121969   0.007836  15.565  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 20.68 on 3568 degrees of freedom
+Multiple R-squared:  0.06358,	Adjusted R-squared:  0.06332 
+F-statistic: 242.3 on 1 and 3568 DF,  p-value: < 2.2e-16
