@@ -4,8 +4,8 @@
 Created on Tue Mar 10 10:53:15 2015
 @author: dmamartin
 """
-"""This imports the sys module"""
-import sys 
+
+import sys #this imports the sys module
 
 if len(sys.argv)!=3: #if this is run it will print the text in the quotation marks below
     print """Run this parser with the following arguments:
@@ -23,8 +23,8 @@ print("Parsing input file %s, writing results to %s"%(infile, outfile)) #This pr
 ifh=open(infile)
 ofh=open(outfile, "w")
 
-""" Read the first line and then reads more lines while the line doesnt match a specific pattern"""
-line= ifh.readline()
+
+line= ifh.readline() #Reads the first line and then reads more lines while the line doesnt match a specific pattern
 
 identifiers=[] 
 
@@ -32,7 +32,7 @@ while line[1:6] != 'Index': #This will read from the first to the sixth characte
     line=ifh.readline()
 
 
-"""This initialises a for loop"""   
+  
 for line in ifh.readlines():
     if line[9]=='>': #reads up to line 9, or up until it doesnt follow a certain pattern, once it reaches the greater than sign it will stop
         identifiers.append(line[13:32].strip()) #...then read the characters 12 to 32
@@ -52,6 +52,6 @@ for line in ifh.readlines():
         fields[1]=identifiers[int(fields[1])-1]
         ofh.write("\t".join(fields)+"\n") #joins up the fields on new lines
 
-"""Closes the created files after the data has been written to them"""
-ofh.close()
+#Closes the created files after the data has been written to them
+ofh.close() 
 ifh.close()
